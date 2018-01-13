@@ -9,7 +9,10 @@ namespace AsyncCoinConsole
         {
             var coinManager = new AsyncCoinManager();
             coinManager.AcquireAsyncCoinAsync();
-            Console.WriteLine($"Some Main-Work at {DateTime.Now}");
+            var savedColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"MAIN: Continue Execution at {DateTime.Now}");
+            Console.ForegroundColor = savedColor;
             Console.ReadLine();
         }
     }
