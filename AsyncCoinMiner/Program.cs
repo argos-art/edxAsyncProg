@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AsyncCoinMiner
 {
@@ -6,7 +9,10 @@ namespace AsyncCoinMiner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var miner = new AsyncCoinMiningManager();
+            // miner.RunPrimesSynchronously();
+            miner.RunPrimesinParallel();
+            Console.ReadLine();
         }
     }
 }
